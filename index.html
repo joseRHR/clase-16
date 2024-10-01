@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h1,h3{
+        text-align: center;
+    }
+    img{
+        width:50% ;
+        padding-left: 25%;
+    }
+    input[type=button]{
+        font-size: medium;
+        background-color: rgb(223, 219, 33);
+        color: rgb(0, 0, 0);
+        width: 150px;
+        height: 60px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    input[type=text]{
+        padding: 10px;
+        font-size: medium;
+    }
+    table{
+        margin: auto;
+        width: 40%;
+    }
+</style>
+<script>
+    function tabla(){
+            document.getElementById("Zona").innerHTML = ""
+            //obtener el numero
+            let n = parseInt(document.getElementById("txtNum").value);
+            if (n >= 13){
+
+                document.getElementById("num").src="img/cancelar.png"
+            }else{
+
+                for(let k = 1; k<=12 ; k++){
+                    document.getElementById("Zona").innerHTML = document.getElementById("Zona").innerHTML + "<br>" + n + "<span style='color:red'; <b> <b> x </b> </span>" + k + "<span style='color:red'; <b> <b>  = </b> </span>" + (n*k);
+                }
+                switch (n){
+                    case 1:
+                        document.getElementById("num").src="img/1.png"
+                        break;
+                    case 2:
+                        document.getElementById("num").src="img/2.png"
+                        break;
+                    case 3:
+                        document.getElementById("num").src="img/3.png"
+                        break;
+                    case 4:
+                        document.getElementById("num").src="img/4.png"
+                        break;
+                }
+            }
+
+        }
+        function limpiar(){
+            document.getElementById("txtNum").value =""
+            document.getElementById("Zona").innerHTML = ""
+        }
+    
+    </script>
+</script>
+<body>
+<table>
+    <div>
+        <img src="https://static.vecteezy.com/system/resources/previews/003/478/730/non_2x/isolated-mathematics-font-banner-free-vector.jpg" alt="">
+    </div>
+        <h1>Tabla De Multiplicar</h1>
+        <hr>
+    <div>
+        <tr>
+            <td>Número</td>
+            <td>
+                <input type="text" name="" id="txtNum">
+            </td>
+        </tr>
+    </div>
+    <br>
+        <tr>
+            <td>
+                <input type="button" onclick="tabla()" value="Calcular">
+            </td>
+            <td>
+                <input type="button" onclick="limpiar()" value="Limpiar">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div id="Zona" style="font-size: 22px; padding: 12px;">
+                
+                </div>
+            </td>
+            <td>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrpwjWgtguBdZaLz7etHKOGxnBYoaGdZbr0Q&s" width="300px" id="num" alt="">
+            </td>
+        </tr>
+</table>
+</body>
+</html>
